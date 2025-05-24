@@ -1,0 +1,11 @@
+# NAME: pt-proxy
+# AUTHOR: 
+# REPO: 
+# UPDATED: 2025-05-224 
+# DOMAIN: 
+# DOMAIN-KEYWORD: 
+# DOMAIN-SUFFIX: 
+# IP-CIDR: 
+# TOTAL: 
+payload:
+  - DOMAIN-SUFFIX,rousi.zip
