@@ -15,7 +15,6 @@ payload:
   - DOMAIN-SUFFIX,connects.icu
   - DOMAIN-SUFFIX,cspt.top
   - DOMAIN-SUFFIX,cspt.date
-  - DOMAIN-SUFFIX,cspt.cc
   - DOMAIN-SUFFIX,discfan.net
   - DOMAIN-SUFFIX,discfan.xyz
   - DOMAIN-SUFFIX,et8.org
@@ -55,7 +54,7 @@ payload:
   - DOMAIN-SUFFIX,tracker.hdtime.org
   - DOMAIN-SUFFIX,tracker.keepfrds.com
   - DOMAIN-SUFFIX,tracker.leaves.red
-  - DOMAIN-SUFFIX,tracker.m-team.cc
+  - DOMAIN-SUFFIX,m-team.cc
   - DOMAIN-SUFFIX,tracker.nanyangpt.com
   - DOMAIN-SUFFIX,tracker.ptchdbits.co
   - DOMAIN-SUFFIX,tracker.pterclub.com
@@ -83,14 +82,4 @@ payload:
   - DOMAIN-SUFFIX,xingtan.one
   - DOMAIN-SUFFIX,xingyunge.top
   - DOMAIN-SUFFIX,zhuque.in
-  - DOMAIN-SUFFIX,hdsky.my
-  - DOMAIN-SUFFIX,hdsky.me
-  - DOMAIN-SUFFIX,filelist.io
-  - DOMAIN-SUFFIX,kamept.com
-  - DOMAIN-SUFFIX,tracker.kame.gay
-  - DOMAIN-SUFFIX,dicmusic.com
-  - DOMAIN-SUFFIX,tracker.52dic.vip
-  - DOMAIN-SUFFIX,carpt.net
-  - DOMAIN-SUFFIX,tracker.carpt.net
-  - DOMAIN-SUFFIX,www.hitpt.com
-  - DOMAIN-SUFFIX,www.ptskit.com
+  - DOMAIN-SUFFIX,crabpt.vip
