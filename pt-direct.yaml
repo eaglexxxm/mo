@@ -64,8 +64,6 @@ payload:
   - DOMAIN-SUFFIX,tracker.rainbowisland.co
   - DOMAIN-SUFFIX,tracker.totheglory.im
   - DOMAIN-SUFFIX,tracker.trackerfile.com
-  - DOMAIN-SUFFIX,tracker.xingyunge.sbs
-  - DOMAIN-SUFFIX,tracker.xingyunge.top
   - DOMAIN-SUFFIX,tracker01.ilovelemonhd.me
   - DOMAIN-SUFFIX,tjupt.org
   - DOMAIN-SUFFIX,tracker-public.tjupt.org
@@ -80,7 +78,10 @@ payload:
   - DOMAIN-SUFFIX,www.pttime.org
   - DOMAIN-SUFFIX,www.qingwapt.com
   - DOMAIN-SUFFIX,xingtan.one
-  - DOMAIN-SUFFIX,xingyunge.top
   - DOMAIN-SUFFIX,zhuque.in
   - DOMAIN-SUFFIX,crabpt.vip
   - DOMAIN-SUFFIX,tracker.luckpt.de
+  - DOMAIN-SUFFIX,piggo.me
+  - DOMAIN-SUFFIX,tey.cc
+  - DOMAIN-SUFFIX,xingyungept.org
+  - DOMAIN-SUFFIX,xingyungept.cn
