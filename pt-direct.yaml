@@ -50,7 +50,8 @@ payload:
   - DOMAIN-SUFFIX,totheglory.im
   - DOMAIN-SUFFIX,tracker.agsvpt.cn
   - DOMAIN-SUFFIX,tracker.cinefiles.info
-  - DOMAIN-SUFFIX,tracker.hdkyl.in
+  - DOMAIN-SUFFIX,hdkyl.in
+  - DOMAIN-SUFFIX,hdkylin.top
   - DOMAIN-SUFFIX,tracker.hdtime.org
   - DOMAIN-SUFFIX,tracker.keepfrds.com
   - DOMAIN-SUFFIX,tracker.leaves.red
@@ -72,8 +73,6 @@ payload:
   - DOMAIN-SUFFIX,www.agsvpt.com
   - DOMAIN-SUFFIX,www.gamegamept.com
   - DOMAIN-SUFFIX,www.hddolby.com
-  - DOMAIN-SUFFIX,www.hdkyl.in
-  - DOMAIN-SUFFIX,www.hdkylin.top
   - DOMAIN-SUFFIX,www.nicept.net
   - DOMAIN-SUFFIX,www.pttime.org
   - DOMAIN-SUFFIX,www.qingwapt.com
