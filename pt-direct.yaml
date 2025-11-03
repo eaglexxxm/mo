@@ -8,83 +8,74 @@
 # IP-CIDR: 
 # TOTAL: 
 payload:
+  # PT 站点和高清论坛主域名 (已去除冗余的 www., t., tracker. 前缀)
   - DOMAIN-SUFFIX,1ptba.com
+  - DOMAIN-SUFFIX,agsvpt.com
+  - DOMAIN-SUFFIX,agsvpt.cn
   - DOMAIN-SUFFIX,audiences.me
   - DOMAIN-SUFFIX,bilibili.download
   - DOMAIN-SUFFIX,chdbits.xyz
   - DOMAIN-SUFFIX,connects.icu
+  - DOMAIN-SUFFIX,crabpt.vip
   - DOMAIN-SUFFIX,cspt.top
   - DOMAIN-SUFFIX,cspt.date
   - DOMAIN-SUFFIX,discfan.net
   - DOMAIN-SUFFIX,discfan.xyz
+  - DOMAIN-SUFFIX,duckboobee.org
   - DOMAIN-SUFFIX,et8.org
+  - DOMAIN-SUFFIX,hdfans.org
   - DOMAIN-SUFFIX,hdhome.org
+  - DOMAIN-SUFFIX,hdkyl.in
+  - DOMAIN-SUFFIX,hdkylin.top
   - DOMAIN-SUFFIX,hdpt.xyz
   - DOMAIN-SUFFIX,hdtime.org
-  - DOMAIN-SUFFIX,hdfans.org
+  - DOMAIN-SUFFIX,hitpt.com
+  - DOMAIN-SUFFIX,htpt.cc
   - DOMAIN-SUFFIX,leaves.red
   - DOMAIN-SUFFIX,lemonhd.club
+  - DOMAIN-SUFFIX,m-team.cc
+  - DOMAIN-SUFFIX,momentpt.top
   - DOMAIN-SUFFIX,nanyangpt.com
   - DOMAIN-SUFFIX,nextpt.net
-  - DOMAIN-SUFFIX,on.springsunday.net
+  - DOMAIN-SUFFIX,novahd.top
   - DOMAIN-SUFFIX,ourbits.club
   - DOMAIN-SUFFIX,pandapt.net
-  - DOMAIN-SUFFIX,pt.agsvpt.cn
-  - DOMAIN-SUFFIX,pt.btschool.club
-  - DOMAIN-SUFFIX,pt.ecust.pp.ua
-  - DOMAIN-SUFFIX,pt.eastgame.org
-  - DOMAIN-SUFFIX,pt.keepfrds.com
-  - DOMAIN-SUFFIX,pt.soulvoice.club
+  - DOMAIN-SUFFIX,piggo.me
   - DOMAIN-SUFFIX,ptchdbits.co
   - DOMAIN-SUFFIX,pterclub.com
-  - DOMAIN-SUFFIX,pterclub.net 
+  - DOMAIN-SUFFIX,pterclub.net
   - DOMAIN-SUFFIX,sanpro.pw
   - DOMAIN-SUFFIX,sewerpt.com
   - DOMAIN-SUFFIX,springsunday.net
   - DOMAIN-SUFFIX,star-space.net
   - DOMAIN-SUFFIX,sunnypt.top
   - DOMAIN-SUFFIX,sunnytk.top
-  - DOMAIN-SUFFIX,t.et8.org
-  - DOMAIN-SUFFIX,t.hddolby.com
-  - DOMAIN-SUFFIX,t.hdhome.org
-  - DOMAIN-SUFFIX,t.audiences.me
-  - DOMAIN-SUFFIX,totheglory.im
-  - DOMAIN-SUFFIX,tracker.agsvpt.cn
-  - DOMAIN-SUFFIX,tracker.cinefiles.info
-  - DOMAIN-SUFFIX,hdkyl.in
-  - DOMAIN-SUFFIX,hdkylin.top
-  - DOMAIN-SUFFIX,tracker.hdtime.org
-  - DOMAIN-SUFFIX,tracker.keepfrds.com
-  - DOMAIN-SUFFIX,tracker.leaves.red
-  - DOMAIN-SUFFIX,m-team.cc
-  - DOMAIN-SUFFIX,tracker.nanyangpt.com
-  - DOMAIN-SUFFIX,tracker.ptchdbits.co
-  - DOMAIN-SUFFIX,tracker.qingwa.pro
-  - DOMAIN-SUFFIX,tracker.qingwapt.com
-  - DOMAIN-SUFFIX,tracker.qingwapt.org
-  - DOMAIN-SUFFIX,tracker.rainbowisland.co
-  - DOMAIN-SUFFIX,tracker.totheglory.im
-  - DOMAIN-SUFFIX,tracker.trackerfile.com
-  - DOMAIN-SUFFIX,tracker01.ilovelemonhd.me
+  - DOMAIN-SUFFIX,tey.cc
   - DOMAIN-SUFFIX,tjupt.org
-  - DOMAIN-SUFFIX,tracker-public.tjupt.org
+  - DOMAIN-SUFFIX,totheglory.im
   - DOMAIN-SUFFIX,tubits.club
   - DOMAIN-SUFFIX,ubits.club
-  - DOMAIN-SUFFIX,www.agsvpt.com
-  - DOMAIN-SUFFIX,www.gamegamept.com
-  - DOMAIN-SUFFIX,www.hddolby.com
-  - DOMAIN-SUFFIX,www.nicept.net
-  - DOMAIN-SUFFIX,www.pttime.org
-  - DOMAIN-SUFFIX,www.qingwapt.com
   - DOMAIN-SUFFIX,xingtan.one
-  - DOMAIN-SUFFIX,zhuque.in
-  - DOMAIN-SUFFIX,crabpt.vip
-  - DOMAIN-SUFFIX,tracker.luckpt.de
-  - DOMAIN-SUFFIX,piggo.me
-  - DOMAIN-SUFFIX,tey.cc
-  - DOMAIN-SUFFIX,xingyungept.org
   - DOMAIN-SUFFIX,xingyungept.cn
-  - DOMAIN-SUFFIX,hitpt.com
-  - DOMAIN-SUFFIX,novahd.top
-  - DOMAIN-SUFFIX,htpt.cc
-  - DOMAIN-SUFFIX,momentpt.top
+  - DOMAIN-SUFFIX,xingyungept.org
+  - DOMAIN-SUFFIX,zhuque.in
+  - DOMAIN-SUFFIX,zrpt.cc
+
+  # 特殊或非传统主域名（如 IP/二级域名）
+  - DOMAIN-SUFFIX,btschool.club
+  - DOMAIN-SUFFIX,cinefiles.info
+  - DOMAIN-SUFFIX,ecust.pp.ua
+  - DOMAIN-SUFFIX,eastgame.org
+  - DOMAIN-SUFFIX,hddolby.com
+  - DOMAIN-SUFFIX,ilovelemonhd.me
+  - DOMAIN-SUFFIX,keepfrds.com
+  - DOMAIN-SUFFIX,luckpt.de
+  - DOMAIN-SUFFIX,nicept.net
+  - DOMAIN-SUFFIX,on.springsunday.net
+  - DOMAIN-SUFFIX,pttime.org
+  - DOMAIN-SUFFIX,qingwa.pro
+  - DOMAIN-SUFFIX,qingwapt.com
+  - DOMAIN-SUFFIX,qingwapt.org
+  - DOMAIN-SUFFIX,rainbowisland.co
+  - DOMAIN-SUFFIX,soulvoice.club
+  - DOMAIN-SUFFIX,trackerfile.com
