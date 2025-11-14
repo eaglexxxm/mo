@@ -8,7 +8,7 @@
 # IP-CIDR: 
 # TOTAL: 
 payload:
-- DOMAIN-SUFFIX,1ptba.com
+  - DOMAIN-SUFFIX,1ptba.com
   - DOMAIN-SUFFIX,agsvpt.cn
   - DOMAIN-SUFFIX,agsvpt.com
   - DOMAIN-SUFFIX,audiences.me
@@ -76,3 +76,4 @@ payload:
   - DOMAIN-SUFFIX,xingyungept.org
   - DOMAIN-SUFFIX,zhuque.in
   - DOMAIN-SUFFIX,zrpt.cc
+  - DOMAIN-SUFFIX,brokenstones.is
