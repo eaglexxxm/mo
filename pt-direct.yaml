@@ -45,8 +45,8 @@ payload:
   - DOMAIN-SUFFIX,nanyangpt.com
   - DOMAIN-SUFFIX,nextpt.net
   - DOMAIN-SUFFIX,nicept.net
-  - DOMAIN-SUFFIX,novahd.top
   - DOMAIN-SUFFIX,novahd.asia
+  - DOMAIN,tracker.novahd.top
   - DOMAIN-SUFFIX,on.springsunday.net
   - DOMAIN-SUFFIX,ourbits.club
   - DOMAIN-SUFFIX,pandapt.net
