@@ -1,7 +1,7 @@
 # NAME: pt-direct
 # AUTHOR: 
 # REPO: 
-# UPDATED: 2025-05-21 
+# UPDATED: 2026-05-22 
 # DOMAIN: 
 # DOMAIN-KEYWORD: 
 # DOMAIN-SUFFIX: 
@@ -13,9 +13,11 @@ payload:
   - DOMAIN-SUFFIX,agsvpt.com
   - DOMAIN-SUFFIX,audiences.me
   - DOMAIN-SUFFIX,bilibili.download
+  - DOMAIN-SUFFIX,brokenstones.is
   - DOMAIN-SUFFIX,btschool.club
   - DOMAIN-SUFFIX,chdbits.xyz
   - DOMAIN-SUFFIX,cinefiles.info
+  - DOMAIN-SUFFIX,clearjav.net
   - DOMAIN-SUFFIX,connects.icu
   - DOMAIN-SUFFIX,crabpt.vip
   - DOMAIN-SUFFIX,cspt.date
@@ -26,12 +28,14 @@ payload:
   - DOMAIN-SUFFIX,eastgame.org
   - DOMAIN-SUFFIX,ecust.pp.ua
   - DOMAIN-SUFFIX,et8.org
-  - DOMAIN-SUFFIX,hdfans.org
+  - DOMAIN-SUFFIX,fearnopeer.com
   - DOMAIN-SUFFIX,hddolby.com
+  - DOMAIN-SUFFIX,hdfans.org
   - DOMAIN-SUFFIX,hdhome.org
   - DOMAIN-SUFFIX,hdkyl.in
   - DOMAIN-SUFFIX,hdkylin.top
   - DOMAIN-SUFFIX,hdpt.xyz
+  - DOMAIN,hhanclub.net
   - DOMAIN-SUFFIX,hdtime.org
   - DOMAIN-SUFFIX,hitpt.com
   - DOMAIN-SUFFIX,htpt.cc
@@ -42,10 +46,12 @@ payload:
   - DOMAIN-SUFFIX,luckpt.de
   - DOMAIN-SUFFIX,m-team.cc
   - DOMAIN-SUFFIX,momentpt.top
+  - DOMAIN-SUFFIX,myanonamouse.net
   - DOMAIN-SUFFIX,nanyangpt.com
   - DOMAIN-SUFFIX,nextpt.net
   - DOMAIN-SUFFIX,nicept.net
   - DOMAIN-SUFFIX,novahd.asia
+  - DOMAIN,pt.novahd.top
   - DOMAIN,tracker.novahd.top
   - DOMAIN-SUFFIX,on.springsunday.net
   - DOMAIN-SUFFIX,ourbits.club
@@ -60,6 +66,7 @@ payload:
   - DOMAIN-SUFFIX,qingwapt.org
   - DOMAIN-SUFFIX,rainbowisland.co
   - DOMAIN-SUFFIX,sanpro.pw
+  - DOMAIN-SUFFIX,seedpool.org
   - DOMAIN-SUFFIX,sewerpt.com
   - DOMAIN-SUFFIX,soulvoice.club
   - DOMAIN-SUFFIX,springsunday.net
@@ -70,14 +77,10 @@ payload:
   - DOMAIN-SUFFIX,tjupt.org
   - DOMAIN-SUFFIX,totheglory.im
   - DOMAIN-SUFFIX,trackerfile.com
+  - DOMAIN-SUFFIX,u2.dmhy.org
   - DOMAIN-SUFFIX,ubits.club
   - DOMAIN-SUFFIX,xingtan.one
   - DOMAIN-SUFFIX,xingyungept.cn
   - DOMAIN-SUFFIX,xingyungept.org
   - DOMAIN-SUFFIX,zhuque.in
   - DOMAIN-SUFFIX,zrpt.cc
-  - DOMAIN-SUFFIX,brokenstones.is
-  - DOMAIN-SUFFIX,fearnopeer.com
-  - DOMAIN-SUFFIX,clearjav.net
-  - DOMAIN-SUFFIX,myanonamouse.net
-  - DOMAIN-SUFFIX,seedpool.org

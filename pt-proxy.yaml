@@ -1,15 +1,9 @@
 # NAME: pt-proxy
 # AUTHOR: 
 # REPO: 
-# UPDATED: 2025-05-24 
+# UPDATED: 2026-05-22 
 # DOMAIN: 
 # DOMAIN-KEYWORD: 
 # DOMAIN-SUFFIX: 
 # IP-CIDR: 
 # TOTAL: 
-payload:
-  - DOMAIN-SUFFIX,rousi.zip
-  - DOMAIN-SUFFIX,u2.dmhy.org
-  - DOMAIN,hhanclub.top
-  - DOMAIN,hhan.club  
-  - DOMAIN,pt.novahd.top
