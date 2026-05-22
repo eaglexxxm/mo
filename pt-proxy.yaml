@@ -8,3 +8,4 @@
 # IP-CIDR: 
 # TOTAL: 
 payload:
+  - DOMAIN-SUFFIX,123test456.com
