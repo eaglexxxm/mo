@@ -35,7 +35,7 @@ payload:
   - DOMAIN-SUFFIX,hdkyl.in
   - DOMAIN-SUFFIX,hdkylin.top
   - DOMAIN-SUFFIX,hdpt.xyz
-  - DOMAIN,hhanclub.net
+  - DOMAIN-SUFFIX,hhanclub.net
   - DOMAIN-SUFFIX,hdtime.org
   - DOMAIN-SUFFIX,hitpt.com
   - DOMAIN-SUFFIX,htpt.cc
@@ -93,3 +93,10 @@ payload:
   - DOMAIN-SUFFIX,exoticaz.to
   - DOMAIN-SUFFIX,reactor.thefl.org
   - DOMAIN-SUFFIX,filelist.io
+  - DOMAIN-SUFFIX,rousi.pro
+  - DOMAIN-SUFFIX,carpt.net
+  - DOMAIN-SUFFIX,cspt.cc
+  - DOMAIN-SUFFIX,tleechreload.org
+  - DOMAIN-SUFFIX,torrentleech.org
+  - DOMAIN-SUFFIX,ultrahd.net
+  
