@@ -1,0 +1,175 @@
+# NAME: WeChat
+# GENERATED-FOR: Anywhere Routing Rule Set
+# DESCRIPTION: WeChat / Weixin / WeCom / WeChat Pay / CDN 大而全覆盖
+# RULES: 116
+
+name = WeChat
+
+# WeChat / Weixin
+2, wechat.com
+2, wechatapp.com
+2, wechatlegal.net
+2, wechatos.net
+2, weixin.com
+2, weixin.qq.com
+2, weixinbridge.com
+2, weixinsxy.com
+
+# Web / Login
+2, wx.qq.com
+2, wx2.qq.com
+2, wx3.qq.com
+2, wx4.qq.com
+2, wx8.qq.com
+2, web.wechat.com
+2, web2.wechat.com
+2, wxs.qq.com
+2, login.weixin.qq.com
+2, open.weixin.qq.com
+2, api.weixin.qq.com
+2, api.wechat.com
+2, long.weixin.qq.com
+2, short.weixin.qq.com
+2, szlong.weixin.qq.com
+2, szshort.weixin.qq.com
+2, szextshort.weixin.qq.com
+2, hkshort.weixin.qq.com
+2, hkextshort.weixin.qq.com
+2, hkminorshort.weixin.qq.com
+2, minorshort.weixin.qq.com
+2, quic.weixin.qq.com
+2, support.weixin.qq.com
+
+# Official Account / Mini Program
+2, mp.weixin.qq.com
+2, mmbiz.qpic.cn
+2, servicewechat.com
+2, wxapp.tc.qq.com
+2, wximg.qq.com
+2, wximg.gtimg.com
+2, wxa.wxs.qq.com
+2, res.wx.qq.com
+2, res2.wx.qq.com
+2, rescdn.qqmail.com
+
+# Image / Avatar / CDN
+2, qpic.cn
+2, qlogo.cn
+2, wx.qlogo.cn
+2, thirdwx.qlogo.cn
+2, wx.gtimg.com
+2, gtimg.com
+2, gtimg.cn
+2, gdtimg.com
+2, url.cn
+
+# Video / Channels / Finder
+2, finder.weixin.qq.com
+2, finder.video.qq.com
+2, channels.weixin.qq.com
+2, vweixinf.tc.qq.com
+2, vweixinthumb.tc.qq.com
+2, vweixin.qq.com
+2, vweixin.tc.qq.com
+2, video.weixin.qq.com
+2, live.weixin.qq.com
+
+# Pay
+2, tenpay.com
+2, wechatpay.com
+2, wx.tenpay.com
+2, pay.weixin.qq.com
+2, payapp.weixin.qq.com
+
+# WeCom / Enterprise WeChat
+2, work.weixin.qq.com
+2, wecom.com
+2, wecom.qq.com
+2, qy.weixin.qq.com
+2, open.work.weixin.qq.com
+
+# Download / Update
+2, dl.wechat.com
+2, dldir.qq.com
+2, dldir1.qq.com
+2, up-hl.3g.qq.com
+2, yun-hl.3g.qq.com
+2, misc.wcd.qq.com
+
+# Push / Trace
+2, tpns.tencent.com
+2, tpns.qq.com
+2, btrace.qq.com
+2, wup.imtt.qq.com
+
+# Map / Location
+2, map.qq.com
+2, apis.map.qq.com
+2, tencentmap.wechat.com
+2, lbs.gtimg.com
+
+# Overseas / International WeChat
+2, sgfindershort.wechat.com
+2, sgilinkshort.wechat.com
+2, sglong.wechat.com
+2, sgminorshort.wechat.com
+2, sgquic.wechat.com
+2, sgshort.wechat.com
+2, sgaxshort.wechat.com
+2, sgextshort.wechat.com
+2, sgsupport.wechat.com
+2, hkfindershort.wechat.com
+2, hkilinkshort.wechat.com
+2, hklong.wechat.com
+2, hkminorshort.wechat.com
+2, hkquic.wechat.com
+2, hkshort.wechat.com
+
+# Tencent Cloud / WeChat CDN
+2, tencent-cloud.net
+2, tencentcloudapi.com
+2, teg.tencent-cloud.net
+2, apd-pcdnwxlogin.teg.tencent-cloud.net
+2, tc.qq.com
+2, cdn-go.cn
+2, myqcloud.com
+
+# Extra Tencent Dependencies
+2, qq.com
+2, idqqimg.com
+2, imqq.com
+2, myapp.com
+2, qqmail.com
+2, x5.tencent.com
+2, slife.xy-asia.com
+2, weixin110.qq.com
+2, security.wechat.com
+2, help.wechat.com
+
+# Apple Push, useful for iOS WeChat notifications
+2, push.apple.com
+2, courier.push.apple.com
+
+# Tencent / WeChat IPv4
+0, 43.128.0.0/10
+0, 43.152.0.0/15
+0, 43.154.0.0/15
+0, 43.155.0.0/16
+0, 101.32.0.0/16
+0, 101.33.0.0/16
+0, 101.34.0.0/15
+0, 101.36.0.0/14
+0, 106.52.0.0/14
+0, 109.244.0.0/16
+0, 111.30.128.0/17
+0, 111.45.0.0/16
+0, 112.53.0.0/16
+0, 129.226.0.0/16
+0, 129.204.0.0/16
+0, 150.109.0.0/16
+0, 203.205.128.0/17
+
+# Tencent / WeChat IPv6
+1, 2402:4e00::/32
+1, 2402:4e80::/32
+1, 240d:c000::/32
