@@ -5,6 +5,7 @@ name = Dropbox-Pro
 # ======================================================
 
 2, dropbox.com
+2, www.dropbox.com
 2, dropboxapi.com
 2, dropboxbusiness.com
 2, dropbox.tech
@@ -15,14 +16,18 @@ name = Dropbox-Pro
 
 2, accounts.dropbox.com
 2, login.dropbox.com
+2, oauth.dropboxapi.com
 
 # ======================================================
 # Desktop Client
 # ======================================================
 
 2, client.dropbox.com
+2, client-lb.dropbox.com
+2, client-cf.dropbox.com
 2, desktop.dropbox.com
 2, linux.dropbox.com
+2, sync.dropbox.com
 
 # ======================================================
 # API
@@ -33,31 +38,38 @@ name = Dropbox-Pro
 2, notify.dropboxapi.com
 
 # ======================================================
-# File Download
+# Upload / Download
 # ======================================================
 
 2, dl.dropboxusercontent.com
 2, dropboxusercontent.com
+2, uc.dropboxusercontent.com
+2, dl-web.dropbox.com
+2, transfer.dropbox.com
 
 # ======================================================
-# Static
+# Static / CDN
 # ======================================================
 
 2, dropboxstatic.com
 2, dropboxstatic.net
 2, cfl.dropboxstatic.com
+2, edge.dropboxstatic.com
+2, assets.dropbox.com
+2, static.dropbox.com
+
+# ======================================================
+# Images / Photos
+# ======================================================
+
+2, images.dropbox.com
+2, photos.dropbox.com
 
 # ======================================================
 # Paper
 # ======================================================
 
 2, paper.dropbox.com
-
-# ======================================================
-# Transfer
-# ======================================================
-
-2, transfer.dropbox.com
 
 # ======================================================
 # Replay
@@ -78,7 +90,7 @@ name = Dropbox-Pro
 2, dash.dropbox.com
 
 # ======================================================
-# Sign (HelloSign)
+# HelloSign / Dropbox Sign
 # ======================================================
 
 2, sign.dropbox.com
@@ -87,7 +99,7 @@ name = Dropbox-Pro
 2, api.hellosign.com
 
 # ======================================================
-# Teams / Business
+# Business
 # ======================================================
 
 2, teams.dropbox.com
@@ -101,17 +113,12 @@ name = Dropbox-Pro
 2, developers.dropbox.com
 
 # ======================================================
-# Status
-# ======================================================
-
-2, status.dropbox.com
-
-# ======================================================
-# Help
+# Support
 # ======================================================
 
 2, help.dropbox.com
 2, helpx.dropbox.com
+2, status.dropbox.com
 
 # ======================================================
 # Community
@@ -131,16 +138,29 @@ name = Dropbox-Pro
 # ======================================================
 
 2, experience.dropbox.com
+2, events.dropbox.com
 
 # ======================================================
-# OAuth
+# Showcase
 # ======================================================
 
-2, oauth.dropboxapi.com
+2, showcase.dropbox.com
+
+# ======================================================
+# Links
+# ======================================================
+
+2, links.dropbox.com
+
+# ======================================================
+# Telemetry
+# ======================================================
+
+2, telemetry.dropbox.com
 
 # ======================================================
 # Misc
 # ======================================================
 
 2, aem.dropbox.com
-2, www.dropbox.com
+2, s.dropbox.com
