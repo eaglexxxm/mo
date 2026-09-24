@@ -1,0 +1,7 @@
+# Redirect2Turrit
+# 原规则作者：ddgksf2013
+name = TG外链接跳转Turrit
+hostname = t.me
+
+[Rule]
+0, 0, ^https?://t\.me/(.+)$, 1, turrit://resolve?domain=$1
