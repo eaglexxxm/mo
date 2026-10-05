@@ -1,3 +1,21 @@
+// Surge binary response adapter. The supplied cleanup logic is retained below.
+function _umetripSurgeBytes(value) {
+  if (value instanceof Uint8Array) return value;
+  if (typeof ArrayBuffer !== 'undefined' && value instanceof ArrayBuffer) {
+    return new Uint8Array(value);
+  }
+  if (typeof ArrayBuffer !== 'undefined' && ArrayBuffer.isView(value)) {
+    return new Uint8Array(value.buffer, value.byteOffset, value.byteLength);
+  }
+  return null;
+}
+if (typeof $response !== 'undefined' && typeof $response.bodyBytes === 'undefined') {
+  const bytes = _umetripSurgeBytes($response.body);
+  if (bytes) {
+    $response.bodyBytes = bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.byteLength);
+  }
+}
+
 const _scriptSonverterCompatibilityType = typeof $response !== 'undefined' ? 'response' : typeof $request !== 'undefined' ? 'request' : ''
 const _scriptSonverterCompatibilityDone = $done
 try {
@@ -139,6 +157,14 @@ var $notify = (title = '', subt = '', desc = '', opts) => {
 }
 var _scriptSonverterOriginalDone = $done
 var _scriptSonverterDone = (val = {}) => {
+  // Translate the supplied body's output to the documented Surge field.
+  if (val && typeof val === 'object' && typeof val.bodyBytes !== 'undefined') {
+    const bytes = _umetripSurgeBytes(val.bodyBytes);
+    if (bytes) {
+      val = Object.assign({}, val, { body: bytes });
+      delete val.bodyBytes;
+    }
+  }
   let result
   if (
     (typeof $request !== 'undefined' &&
