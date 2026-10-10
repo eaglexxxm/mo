@@ -1,0 +1,96 @@
+#!name=Adblock-General-Lite
+#!desc=配合 Reject-China-Balanced 使用；仅保留共享广告 SDK 静态处理，App／网站专属功能和远程脚本移出。
+#!category=去广告
+#!author=原规则作者；本地筛选与去重（来源与处理记录见说明）
+#!date=2026-10-10
+# 本文件需启用当前 Reject；替换旧综合 Lite 后使用。
+# Map Local 的空体、JSON、GIF 响应保留原值与顺序，不合并不同响应。
+# ByteImg 两项仅保留 HTTP；没有新增共享 CDN 的 HTTPS 解密范围。
+
+[Rule]
+DOMAIN-KEYWORD,-ad.sm.cn,REJECT,extended-matching,pre-matching
+DOMAIN,lf-ad-ies.bytecdn.cn,REJECT
+DOMAIN,adx.adtaipo.com,REJECT
+DOMAIN,adxapi.readgps.com,REJECT
+DOMAIN,t.fanglinad.com,REJECT
+DOMAIN,nfy.slyxmobi.com,REJECT
+DOMAIN,api.mobrtb.com,REJECT
+DOMAIN,ssp.maplehaze.cn,REJECT
+
+[URL Rewrite]
+^https?://(?:[A-Za-z0-9-]+\.)+pstatp\.com/(obj|img)/(ad-app-package|ad)/.+ _ reject
+^https?://(?:[A-Za-z0-9-]+\.)+pstatp\.com/(obj|img)/web\.business\.image/.+ _ reject
+^https?://(?:[A-Za-z0-9-]+\.)+pstatp\.com/obj/ad-pattern/renderer _ reject
+^https?://(?:[A-Za-z0-9-]+\.)+pstatp\.com/obj/mosaic-legacy/.+\?from\=ad _ reject
+^https?://(?:[A-Za-z0-9-]+\.)+pstatp\.com/bytecom/resource/track_log/src/.+ _ reject
+^http://(?:[A-Za-z0-9-]+\.)+byteimg\.com/ad-app-package _ reject
+^http://(?:[A-Za-z0-9-]+\.)+byteimg\.com/web\.business\.image _ reject
+
+[Map Local]
+^https?:\/\/mobads-pre-config\.cdn\.bcebos\.com\/preload\.php data-type=text data=" " status-code=200
+^https?://toblog\.ctobsnssdk\.com(?=[/:?#]|$) data-type=text data=" " status-code=200
+^https:\/\/cdn\.cmgadx\.com\/sdk\/pool\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/qadx\.qinlinad\.com\/ad\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/d\.socdm\.com\/adsv\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https?:\/\/adx-cn\.anythinktech\.com\/bid data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https?:\/\/img\.admobile\.top\/admobile-adRequest\/.*.(jpg|png) data-type=text data=" " status-code=200
+^https?:\/\/pagead2\.googlesyndication\.com\/pagead\/ data-type=tiny-gif status-code=200
+^https?:\/\/mi\.gdt\.qq\.com\/gdt_mview\.fcg\?posid= data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/open\.e\.kuaishou\.cn\/rest\/e\/v3\/open data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/zlsdk\.1rtb\.net\/sdk\/req_ad\?sdk_version=\d+\.\d+\.\d+\.\d+&device_os=iOS&accept_ad_type=\d+&app_id=\d+&pid=\d+&sdk_version_code=\d+ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https?:\/\/alt-r\.my\.com\/mobile data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https?:\/\/imgx\.jampp\.com\/imgsrv\/tn data-type=tiny-gif status-code=200
+^http://(?:[A-Za-z0-9-]+\.)+pglstatp-toutiao\.com(?=[/:?#]|$) data-type=text data=" " status-code=200
+^https?:\/\/zlsdk\.1rtb\.net\/sdk\/req_ad data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/sdk\.1rtb\.net\/sdk\/req_ad\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https?:\/\/cdn\.cmgadx\.com\/sdk\/pool\/m8uTS50pt3DC0Xd6\.json data-type=text data=" " status-code=200
+^https?:\/\/adx-cn\.anythinktech\.com\/bid data-type=text data=" " status-code=200
+^https?:\/\/img\.admobile\.top\/admobile-adRequest\/.*.(jpg|png) data-type=text data="" status-code=200
+^https?:\/\/mobads-pre-config\.cdn\.bcebos\.com\/preload\.php data-type=text data="" status-code=200
+^https?://toblog\.ctobsnssdk\.com(?=[/:?#]|$) data-type=text data="" status-code=200
+^https?:\/\/mtteve\.beacon\.qq\.com\/analytics data-type=tiny-gif status-code=200
+^https?:\/\/qzonestyle\.gtimg\.cn\/qzone\/biz\/gdt\/mob\/sdk\/ios\/v2\/ data-type=tiny-gif status-code=200
+^http://(?:[A-Za-z0-9-]+\.)+pglstatp-toutiao\.com(?=[/:?#]|$) data-type=text data="" status-code=200
+^https?:\/\/cdn\.cmgadx\.com\/sdk\/pool\/m8uTS50pt3DC0Xd6\.json data-type=text data="" status-code=200
+^https?:\/\/adx-cn\.anythinktech\.com\/bid data-type=text data="" status-code=200
+^https?:\/\/sdk\.1rtb\.net\/sdk\/req_ad data-type=text data="" status-code=200
+^https?:\/\/mobads\.baidu\.com\/cpro\/ui\/mads.php data-type=text data="" status-code=200
+^https:\/\/mi\.gdt\.qq\.com\/gdt_mview\.fcg data-type=text data="" status-code=200
+^https:\/\/open\.e\.kuaishou\.com\/rest\/e\/v3\/open\/univ data-type=text data="" status-code=200
+^https?://adx[A-Za-z0-9-]*(?:\.[A-Za-z0-9-]+)*\.anythinktech\.com/bid data-type=text data="" status-code=200
+^https?:\/\/qadx\.qinlinad\.com\/ad\/ data-type=text data="" status-code=200
+^https?:\/\/sdk\.tianmu\.mobi\/ad data-type=text data="" status-code=200
+^https://otheve\.beacon\.qq\.com/analytics/upload\?sid=.* data-type=text data="" status-code=200
+^https?://(?:[A-Za-z0-9-]+\.)+1rtb\.net/sdk/req_ad\? data-type=text data="" status-code=200
+^https?:\/\/cdn\.cmgadx\.com\/sdk\/pool\/\w+\.json data-type=text data="" status-code=200
+^https?:\/\/entry\.ubixioe\.com\/mob\/sdk\/v\d\/endpoint data-type=text data="" status-code=200
+^https?://(?:[A-Za-z0-9-]+\.)+ubixioe\.com/mob/sdk/v\d/endpoint data-type=text data="" status-code=200
+^https?://img\.admobile\.top/ data-type=text data="" status-code=200
+^https?:\/\/[a-zA-Z0-9_-]+\.tianmu\.mobi\/ad data-type=text data="" status-code=200
+^https?://toblog\.ctobsnssdk\.com(?=[/:?#]|$) data-type=text data="  " status-code=200
+^https?:\/\/sdk\.tianmu\.mobi\/ad data-type=text data="  " status-code=200
+^https?:\/\/sdk\.1rtb\.net\/sdk\/req_ad data-type=text data="  " status-code=200
+^https?:\/\/qzonestyle\.gtimg\.cn\/qzone\/biz\/gdt\/mob\/sdk\/ios\/v2\/ data-type=base64 data="R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" status-code=200 header="Content-Type:image/gif"
+^https?:\/\/qadx\.qinlinad\.com\/ad\/ data-type=text data="  " status-code=200
+^https?:\/\/pagead2\.googlesyndication\.com\/pagead\/ data-type=base64 data="R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" status-code=200 header="Content-Type:image/gif"
+^https?:\/\/mtteve\.beacon\.qq\.com\/analytics data-type=base64 data="R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" status-code=200 header="Content-Type:image/gif"
+^https?:\/\/mobads\.baidu\.com\/cpro\/ui\/mads.php data-type=text data="  " status-code=200
+^https?:\/\/mobads-pre-config\.cdn\.bcebos\.com\/preload\.php data-type=text data="  " status-code=200
+^https?:\/\/imgx\.jampp\.com\/imgsrv\/tn data-type=base64 data="R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" status-code=200 header="Content-Type:image/gif"
+^https?:\/\/img\.admobile\.top\/admobile-adRequest\/.*.(jpg|png) data-type=text data="  " status-code=200
+^https?:\/\/entry\.ubixioe\.com\/mob\/sdk\/v\d\/endpoint data-type=text data="  " status-code=200
+^https?:\/\/cdn\.cmgadx\.com\/sdk\/pool\/m8uTS50pt3DC0Xd6\.json data-type=text data="  " status-code=200
+^https?:\/\/cdn\.cmgadx\.com\/sdk\/pool\/\w+\.json data-type=text data="  " status-code=200
+^https?://adx[A-Za-z0-9-]*(?:\.[A-Za-z0-9-]+)*\.anythinktech\.com/bid data-type=text data="  " status-code=200
+^https?:\/\/adx-cn\.anythinktech\.com\/bid data-type=text data="  " status-code=200
+^https?:\/\/[a-zA-Z0-9_-]+\.tianmu\.mobi\/ad data-type=text data="  " status-code=200
+^https?://img\.admobile\.top/ data-type=text data="  " status-code=200
+^https?://(?:[A-Za-z0-9-]+\.)+ubixioe\.com/mob/sdk/v\d/endpoint data-type=text data="  " status-code=200
+^https?://(?:[A-Za-z0-9-]+\.)+1rtb\.net/sdk/req_ad\? data-type=text data="  " status-code=200
+^https:\/\/open\.e\.kuaishou\.com\/rest\/e\/v3\/open\/univ data-type=text data="  " status-code=200
+^https:\/\/mi\.gdt\.qq\.com\/gdt_mview\.fcg data-type=text data="  " status-code=200
+^https://otheve\.beacon\.qq\.com/analytics/upload\?sid=.* data-type=text data="  " status-code=200
+^http://(?:[A-Za-z0-9-]+\.)+pglstatp-toutiao\.com(?=[/:?#]|$) data-type=text data="  " status-code=200
+
+[MITM]
+hostname = %APPEND% mobads-pre-config.cdn.bcebos.com, toblog.ctobsnssdk.com, cdn.cmgadx.com, qadx.qinlinad.com, d.socdm.com, mobads.baidu.com, img.admobile.top, *.pstatp.com, mi.gdt.qq.com, open.e.kuaishou.com, pagead2.googlesyndication.com, *.ubixioe.com, open.e.kuaishou.cn, alt-r.my.com, imgx.jampp.com, *.beacon.qq.com, qzonestyle.gtimg.cn, *.tianmu.mobi, *.1rtb.net, *.anythinktech.com
