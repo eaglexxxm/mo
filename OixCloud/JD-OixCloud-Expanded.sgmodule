@@ -1,0 +1,77 @@
+#!name=京东去广告 Expanded
+#!desc=并入2025-05-19新版JS、购物车推广过滤及新增请求规则；比价默认停用。
+#!author=RuCu6, Maasea, fmz200, luoxx, sooyaaabo, mw418, wf021325
+#!openUrl=https://apps.apple.com/app/id414245413
+#!category=去广告
+#!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/JD.png
+#!date=2026-10-10
+# 用户上传JS原样引用；脚本SHA256: a8115b3c60d3e9ad76d9bd0e6bb1edf07b73bd569dbd80b7efbbcf7bd3059322
+# 新增八条配置均已并入活动规则，重复的 basicConfig、Widget、推荐及 diagnose 已归并。
+# 保留新增源规则的 /i 与前缀语义；同时支持 functionId/loginType 参数顺序变化。
+# 新版独立模块替换上一版；不要同时启用两个京东标准App去广告模块。
+# 选择 Surge / Shadowrocket 解析模式；活动HTTPS主机需MITM证书与信任。
+
+[Rule]
+DOMAIN,ads-img-x.jd.com,REJECT
+DOMAIN,ads-video-x.jd.com,REJECT
+URL-REGEX,"^http:\/\/\w{32}\.jddebug\.com\/diagnose\?",REJECT
+
+# 原泛SDK/业务域名与HTTPDNS整域/IP处理继续作为可选注释保留。
+# DOMAIN-SUFFIX,jzt.jd.com,REJECT
+# DOMAIN-SUFFIX,img-x.jd.com,REJECT
+# DOMAIN-SUFFIX,du.jd.com,REJECT
+# DOMAIN-SUFFIX,c-nfa.jd.com,REJECT
+# DOMAIN-SUFFIX,cm.jd.com,REJECT
+# DOMAIN-SUFFIX,jddebug.com,REJECT
+# DOMAIN-SUFFIX,policy.jd.com,REJECT
+# DOMAIN-SUFFIX,kepler.jd.com,REJECT
+# DOMAIN-SUFFIX,bdsp.x.jd.com,REJECT
+# DOMAIN-SUFFIX,keplerapi.jd.com,REJECT
+# DOMAIN-SUFFIX,mapi.m.jd.com,REJECT
+# DOMAIN-SUFFIX,ad.3.cn,REJECT
+# DOMAIN-SUFFIX,jd.c-ptsp.com.cn,REJECT
+# DOMAIN,dns.jd.com,REJECT
+# IP-CIDR,101.124.19.122/32,REJECT,no-resolve
+# IP-CIDR6,2402:db40:5100:1011::5/128,REJECT,no-resolve
+
+[Map Local]
+# reject(200)：严格空Body，不使用空格/JSON/图片替代。
+(?i)^https?:\/\/m\.360buyimg\.com\/mobilecms\/s1125x2436_jfs data-type=text data="" status-code=200
+# reject_dict(200)：JSON对象{}。
+(?i)^https?:\/\/api\.m\.jd\.com\/\?(?:[^&]*&)*loginType=11 data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# getWidgetV1052 按新指令返回空Body 404；旧普通reject已移除。
+(?i)^https?:\/\/api\.m\.jd\.com\/client\.action\?(?:[^&]*&)*functionId=getWidgetV1052 data-type=text data="" status-code=404
+# 原 searchBoxWord/stationPullService/uniformRecommend0/6 被此七类前缀集合覆盖，只保留这一条。
+(?i)^https:\/\/api\.m\.jd\.com\/client\.action\?(?:[^&]*&)*functionId=(?:cartCouponRecommendGoods|intelligentRecommendSku|obtainGrowingInfo|recommendShop|searchBoxWord|stationPullService|uniformRecommend) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+[Body Rewrite]
+# 三项现有 basicConfig 字段置0，沿用原对象/已有键守卫；没有重复增加第二条。
+http-response-jq (?i)^https:\/\/api\.m\.jd\.com\/client\.action\?(?:[^&]*&)*functionId=basicConfig 'if type == "object" then (if (getpath(["data"]) | type) == "object" then (if (getpath(["data","JDMessage"]) | type) == "object" then (if (getpath(["data","JDMessage","socketmonitor"]) | type) == "object" then (if (getpath(["data","JDMessage","socketmonitor"]) | has("isSocketEstablishedAhead")) then setpath(["data","JDMessage","socketmonitor","isSocketEstablishedAhead"]; 0) else . end) else . end) else . end) else . end) else . end | if type == "object" then (if (getpath(["data"]) | type) == "object" then (if (getpath(["data","JDMessage"]) | type) == "object" then (if (getpath(["data","JDMessage","socketmonitor"]) | type) == "object" then (if (getpath(["data","JDMessage","socketmonitor"]) | has("isSocketReport")) then setpath(["data","JDMessage","socketmonitor","isSocketReport"]; 0) else . end) else . end) else . end) else . end) else . end | if type == "object" then (if (getpath(["data"]) | type) == "object" then (if (getpath(["data","JDHttpToolKit"]) | type) == "object" then (if (getpath(["data","JDHttpToolKit","httpdns"]) | type) == "object" then (if (getpath(["data","JDHttpToolKit","httpdns"]) | has("httpdns")) then setpath(["data","JDHttpToolKit","httpdns","httpdns"]; 0) else . end) else . end) else . end) else . end) else . end'
+# 购物车只删除指定两个字段，其它商品/订单/支付信息保留。
+http-response-jq (?i)^https:\/\/api\.m\.jd\.com\/client\.action\?(?:[^&]*&)*functionId=cart 'if type == "object" then (if (.cartLocationMap | type) == "object" then del(.cartLocationMap.loc_emptyCartFloor2) else . end) | del(.emptyCartRecommendFloor) else . end'
+# 激活原已有的静态文字替换，与新Loon body.replace归并一种实现。
+# 使用Surge Body Rewrite标准替换行为；源Loon文档未声明单次/全局次数。
+http-response (?i)^https?:\/\/api\.m\.jd\.com\/client\.action\?(?:[^&]*&)*functionId=lite_advertising jdLiteAdvertisingVO sooyaaabo
+
+[Script]
+JD-Ads = type=http-response, pattern="^https:\/\/api\.m\.jd\.com\/client\.action\?(?:[^&]*&)*functionId=(?:deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome)(?:&|$)", requires-body=true, script-path=https://raw.githubusercontent.com/eaglexxxm/mo/refs/heads/r/OixCloud/js/jingdong.js
+
+# ===== 历史比价：按用户选择，以下全部默认停用 =====
+# 首先启用 Cookie 捕获，然后只选一种展示方式；另按说明扩展 MITM 主机。
+# Cookie 原脚本与两个可用展示脚本均使用 manmanbuy_val 存储键；实际跨脚本存储需设备验证。
+# JD-Price-Cookie = type=http-request, pattern="^https?:\/\/apapia-sqk-weblogic\.manmanbuy\.com\/baoliao\/center\/menu(?:\?|$)", requires-body=true, timeout=60, script-path=https://raw.githubusercontent.com/mw418/Loon/main/script/jd_price.js
+# 表格展示：源码支持 product/graphext 页面，当前下载与语法核验通过。
+# JD-Price-Table = type=http-response, pattern="^https?:\/\/in\.m\.jd\.com\/product\/graphext\/\d+\.html(?:\?|$)", requires-body=true, timeout=60, script-path=https://raw.githubusercontent.com/wf021325/qx/master/js/jd_price.js
+# 通知展示：与表格模式任选一种，避免一次访问多次查询。
+# JD-Price-Notify = type=http-request, pattern="^https?:\/\/in\.m\.jd\.com\/product\/graphext\/\d+\.html(?:\?|$)", timeout=60, script-path=https://raw.githubusercontent.com/mw418/Loon/main/script/jd_price.js
+# 以下两项保留原历史配置记录，当前不是可直接启用的工作配置。
+# 标题嵌入：目前 wf021325 脚本无 wareBusiness/serverConfig/basicConfig 对应分支，需先换适配脚本。
+# JD-Price-Title-Reference = type=http-response, pattern="^https?:\/\/api\.m\.jd\.com\/client\.action\?(?:[^&]*&)*functionId=(?:wareBusiness|serverConfig|basicConfig)(?:&|$)", requires-body=true, script-path=https://raw.githubusercontent.com/wf021325/qx/master/js/jd_price.js
+# 折线嵌入：当前此链接返回 HTML 网页，启用前必须替换为有效 JS 直链。
+# JD-Price-Line-Reference = type=http-response, pattern="^https?:\/\/in\.m\.jd\.com\/product\/graphext\/\d+\.html(?:\?|$)", requires-body=true, timeout=60, script-path=https://loon.103516.xyz/Script/Jingdong/JD_Price.js
+
+
+[MITM]
+hostname = %APPEND% api.m.jd.com, m.360buyimg.com
+# 比价仍默认关闭。未来启用时，将唯一活动hostname行替换为下行：
+# hostname = %APPEND% api.m.jd.com, m.360buyimg.com, in.m.jd.com, apapia-sqk-weblogic.manmanbuy.com
