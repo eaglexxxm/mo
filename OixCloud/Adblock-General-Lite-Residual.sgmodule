@@ -1,0 +1,40 @@
+#!name=Adblock-General-Lite-Residual
+#!desc=配合三个已启用可莉模块与 Reject-Compact-Residual；仅保留未覆盖的通用广告处理。
+#!category=去广告
+#!author=原规则作者；本地覆盖审查与去重
+#!date=2026-10-11
+# 依赖 Block_HTTPDNS.lpx、BlockAdvertisers.lpx、Remove_ads_by_keli.lpx 继续启用且优先生效。
+# 整目标拒绝与原 Map Local 返回值并非字节等价；依赖模块接管处理。
+# CDN/QADX 的 HTTPS 处理交给可莉模块，原 HTTP 响应与保留顺序不变。
+# 无远程脚本；ByteImg 两项仍仅匹配 HTTP。
+
+[Rule]
+DOMAIN-KEYWORD,-ad.sm.cn,REJECT,extended-matching,pre-matching
+
+[URL Rewrite]
+^https?://(?:[A-Za-z0-9-]+\.)+pstatp\.com/(obj|img)/(ad-app-package|ad)/.+ _ reject
+^https?://(?:[A-Za-z0-9-]+\.)+pstatp\.com/(obj|img)/web\.business\.image/.+ _ reject
+^https?://(?:[A-Za-z0-9-]+\.)+pstatp\.com/obj/ad-pattern/renderer _ reject
+^https?://(?:[A-Za-z0-9-]+\.)+pstatp\.com/obj/mosaic-legacy/.+\?from\=ad _ reject
+^https?://(?:[A-Za-z0-9-]+\.)+pstatp\.com/bytecom/resource/track_log/src/.+ _ reject
+^http://(?:[A-Za-z0-9-]+\.)+byteimg\.com/ad-app-package _ reject
+^http://(?:[A-Za-z0-9-]+\.)+byteimg\.com/web\.business\.image _ reject
+
+[Map Local]
+^https?:\/\/alt-r\.my\.com\/mobile data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https?:\/\/imgx\.jampp\.com\/imgsrv\/tn data-type=tiny-gif status-code=200
+^http:\/\/cdn\.cmgadx\.com\/sdk\/pool\/m8uTS50pt3DC0Xd6\.json data-type=text data=" " status-code=200
+^https?:\/\/mtteve\.beacon\.qq\.com\/analytics data-type=tiny-gif status-code=200
+^https?:\/\/qzonestyle\.gtimg\.cn\/qzone\/biz\/gdt\/mob\/sdk\/ios\/v2\/ data-type=tiny-gif status-code=200
+^http:\/\/cdn\.cmgadx\.com\/sdk\/pool\/m8uTS50pt3DC0Xd6\.json data-type=text data="" status-code=200
+^http:\/\/qadx\.qinlinad\.com\/ad\/ data-type=text data="" status-code=200
+^http:\/\/cdn\.cmgadx\.com\/sdk\/pool\/\w+\.json data-type=text data="" status-code=200
+^https?:\/\/qzonestyle\.gtimg\.cn\/qzone\/biz\/gdt\/mob\/sdk\/ios\/v2\/ data-type=base64 data="R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" status-code=200 header="Content-Type:image/gif"
+^http:\/\/qadx\.qinlinad\.com\/ad\/ data-type=text data="  " status-code=200
+^https?:\/\/mtteve\.beacon\.qq\.com\/analytics data-type=base64 data="R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" status-code=200 header="Content-Type:image/gif"
+^https?:\/\/imgx\.jampp\.com\/imgsrv\/tn data-type=base64 data="R0lGODlhAQABAIAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" status-code=200 header="Content-Type:image/gif"
+^http:\/\/cdn\.cmgadx\.com\/sdk\/pool\/m8uTS50pt3DC0Xd6\.json data-type=text data="  " status-code=200
+^http:\/\/cdn\.cmgadx\.com\/sdk\/pool\/\w+\.json data-type=text data="  " status-code=200
+
+[MITM]
+hostname = %APPEND% *.pstatp.com, alt-r.my.com, imgx.jampp.com, mtteve.beacon.qq.com, qzonestyle.gtimg.cn
