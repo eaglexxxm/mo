@@ -1,0 +1,47 @@
+#!name=Request-Storm-Drop
+#!desc=按用户清单补充静默拒绝与提前匹配；7 个完整网段、28 个精确域名；无 MITM／远程脚本，OixCloud 参数行为需导入验收。
+#!category=去广告
+#!author=用户提供清单；本地整理
+#!date=2026-10-11
+# 对这些目标采用 REJECT-DROP；与 ARRS 的普通拒绝存在策略差异。
+# 在 OixCloud 的生效顺序／分流来源优先级中，让本模块先于普通 Reject。
+# no-resolve 用于 IP 规则；DOMAIN 规则无需主动解析来判断域名命中。
+# 7 个 /24 是用户提供的整段列表；未验证每个地址都属于拼多多 HTTPDNS。
+# Surge 语法核验不能证明 OixCloud 同样实现 DROP 或 pre-matching。
+
+[Rule]
+DOMAIN,dataflow.biliapi.com,REJECT-DROP,pre-matching
+DOMAIN,stun.chat.bilibili.com,REJECT-DROP,pre-matching
+DOMAIN,notes-analytics-events.apple.com,REJECT-DROP,pre-matching
+DOMAIN,collector.github.com,REJECT-DROP,pre-matching
+DOMAIN,analytics-api.smzdm.com,REJECT-DROP,pre-matching
+DOMAIN,t2.xiaohongshu.com,REJECT-DROP,pre-matching
+DOMAIN,apm-native.xiaohongshu.com,REJECT-DROP,pre-matching
+DOMAIN,sessions.bugsnag.com,REJECT-DROP,pre-matching
+DOMAIN,spider-tracker.xiaohongshu.com,REJECT-DROP,pre-matching
+DOMAIN,mon.zijieapi.com,REJECT-DROP,pre-matching
+DOMAIN,log.snssdk.com,REJECT-DROP,pre-matching
+DOMAIN,log.mmstat.com,REJECT-DROP,pre-matching
+DOMAIN,loggw.alipay.com,REJECT-DROP,pre-matching
+DOMAIN,loggw.alipay.com.cn,REJECT-DROP,pre-matching
+DOMAIN,gm.mmstat.com,REJECT-DROP,pre-matching
+DOMAIN,wgo.mmstat.com,REJECT-DROP,pre-matching
+DOMAIN,ztjy.cn-hangzhou.log.aliyuncs.com,REJECT-DROP,pre-matching
+DOMAIN,tracking.miui.com,REJECT-DROP,pre-matching
+DOMAIN,snowflake.qq.com,REJECT-DROP,pre-matching
+DOMAIN,s-gm.mmstat.com,REJECT-DROP,pre-matching
+DOMAIN,mum.alibabachengdun.com,REJECT-DROP,pre-matching
+DOMAIN,metrics.icloud.com,REJECT-DROP,pre-matching
+DOMAIN,mcs.zijieapi.com,REJECT-DROP,pre-matching
+DOMAIN,mcs.volceapplog.com,REJECT-DROP,pre-matching
+DOMAIN,apm-fe.xiaohongshu.com,REJECT-DROP,pre-matching
+DOMAIN,apm-rum.inf.miui.com,REJECT-DROP,pre-matching
+DOMAIN,supportmetrics.apple.com,REJECT-DROP,pre-matching
+DOMAIN,sdk.open.talk.gepush.com,REJECT-DROP,pre-matching
+IP-CIDR,114.110.96.0/24,REJECT-DROP,pre-matching,no-resolve
+IP-CIDR,114.110.97.0/24,REJECT-DROP,pre-matching,no-resolve
+IP-CIDR,101.35.204.0/24,REJECT-DROP,pre-matching,no-resolve
+IP-CIDR,101.35.212.0/24,REJECT-DROP,pre-matching,no-resolve
+IP-CIDR,101.36.166.0/24,REJECT-DROP,pre-matching,no-resolve
+IP-CIDR,121.5.84.0/24,REJECT-DROP,pre-matching,no-resolve
+IP-CIDR,81.69.130.0/24,REJECT-DROP,pre-matching,no-resolve
