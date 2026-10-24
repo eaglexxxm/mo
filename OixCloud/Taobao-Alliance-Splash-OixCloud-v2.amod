@@ -1,0 +1,11 @@
+# 淘宝联盟开屏去广告（2026-10-24 ProxyPin HAR）
+# 此规则只移除 batchResult 中 siteCode=open_screen_site 的项。
+# 停用上一版脚本模块后，选择 Anywhere（原生）导入。
+[Module]
+name = 淘宝联盟开屏去广告 v2
+description = 原生 JSON 规则，只移除开屏广告，保留同接口的其他配置。
+
+[MITM]
+name = 淘宝联盟开屏去广告
+hostname = acs.m.taobao.com
+1,5,^https://acs\.m\.taobao\.com/gw/mtop\.alimama\.union\.skyleap\.distribution\.batchsite/1\.0/,remove-where-field-in,$.data.batchResult,siteCode,open_screen_site
