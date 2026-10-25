@@ -1,0 +1,11 @@
+# 顺丰速运微信小程序：仅隐藏「送赠送金」悬浮图标。
+# 依据 ProxyPin 2026-10-25 10:48 抓包定位的独立 GIF 资源。
+# 其余顺丰接口、新速运通卡、充值和订单均不改写。
+[Module]
+name = 顺丰·隐藏送赠送金入口
+description = 将寄件列表的「送赠送金」动图替换为透明图像。
+
+[MITM]
+name = 顺丰送赠送金图片
+hostname = ucmp-static.sf-express.com
+0,0,^https://ucmp-static\.sf-express\.com/sfoss/ad-act/infoflow/9C80FE81535847809474332782DD02BF\.gif(?:\?.*)?$,3
