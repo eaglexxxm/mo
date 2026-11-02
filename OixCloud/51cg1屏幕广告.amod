@@ -1,4 +1,5 @@
 # 51吃瓜广告过滤 v19 · OixCloud Anywhere 原生 .amod
+#!category=Ad Block by ai
 # Chrome 打开 51cg1 时，用原生替换写上隐藏样式，并删掉首页弹窗数据。
 # 书签 App 的开屏、首页轮播和帖子之间的广告位保持 v18。正文保留。
 # 广告图仍只拦 hc237/uploads/default/other。
