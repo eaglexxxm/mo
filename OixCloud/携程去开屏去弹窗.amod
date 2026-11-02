@@ -1,4 +1,5 @@
 # 携程去开屏去弹窗 · OixCloud Anywhere 原生 .amod
+#!category=Ad Block by ai
 # 开屏和弹窗仍从 tripAds 里挑掉。公开规则把整段响应清空，8.47 以后会丢图片，这里不这么做。
 # 另外拦掉墨鱼和奶思都在用的开屏统计图。导入时选择 Anywhere（原生）。
 [Module]
