@@ -1,5 +1,5 @@
 # 数字心动去广告 · OixCloud Anywhere 原生 .amod
-#!tag=Ad Block by ai
+#!category=Ad Block by ai
 # 开屏、首页轮播、热搜和广告位按可莉的接口清掉，成功外壳保留。
 # 推荐分类保留，只清空分类里的广告。竞价和配置接口返回空对象。
 # 导入时选择 Anywhere（原生）。
