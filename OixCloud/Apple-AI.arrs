@@ -1,7 +1,8 @@
 # Apple Intelligence / Siri / Relay
 # Source: https://raw.githubusercontent.com/RocM301/Apple-Rule/refs/heads/main/Apple-AI.list
+# Source: https://raw.githubusercontent.com/ddgksf2013/Filter/refs/heads/master/AppleIntelligence.list
 # Converted for oixCloud / Anywhere on 2026-11-10.
-# 19 rules in source order. Six DOMAIN entries become suffix rules and also match subdomains.
+# 21 rules after merging and deduplicating. Six DOMAIN entries become suffix rules and also match subdomains.
 # Select the outbound policy in oixCloud.
 
 name = Apple Intelligence
@@ -27,3 +28,5 @@ icon-dark = iVBORw0KGgoAAAANSUhEUgAAAJAAAACQCAYAAADnRuK4AAAnLElEQVR42u2deZRdVZ3v
 2, mask.icloud.com
 2, apps.mzstatic.com
 3, siri
+2, apple-relay.akamaized.net
+2, api-siri-prod.apple.com
